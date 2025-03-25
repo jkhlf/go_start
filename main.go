@@ -31,4 +31,30 @@ func main() {
 		p string = "dev"
 	)
 	fmt.Printf("T %t, S %d, P %s\n", t, s, p)
+
+	//Zero Values
+	var defaultInt int
+	var defaultFloat float64
+	var defaultBool bool
+	var defaultString string
+
+	fmt.Printf("Default Int %d, Default Float %f, Default Bool %t, Default String %s\n", defaultInt, defaultFloat, defaultBool, defaultString)
+
+	//go dont have enums, but we can use constants with iota
+	const (
+		Jan int = iota + 1
+		Feb     //2
+		Mar     //3
+		Apr     //4
+	)
+
+	result, r := add(10, 10)
+	fmt.Printf("Result %d\n", result, r)
+
+}
+
+//func whit smallcase is private(not exported), with uppercase is public can be exported
+
+func add(a int, b int) (int, int) {
+	return a + b, a * b
 }
